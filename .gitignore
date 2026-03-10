@@ -1,0 +1,1 @@
+# Next.js ignores\nnode_modules\n/.next\nout\n.env\n*.log\n.DS_Store\n

@@ -1,0 +1,1 @@
+/** @type {import('tailwindcss').Config} */\nmodule.exports = {\n  darkMode: 'class',\n  plugins: [require('@tailwindcss/typography')]\n};
