@@ -1,1 +1,0 @@
-module.exports = {\n  images: {\n    remotePatterns: [\n      {\n        protocol: 'https',\n        hostname: 'avatars.githubusercontent.com',\n        port: '',\n        pathname: '/**'\n      }\n    ]\n  }\n};

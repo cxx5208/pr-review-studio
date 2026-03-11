@@ -38,7 +38,7 @@ export interface LLMResponse {
 export interface LLMProviderAdapter {
   config: LLMProviderConfig
   complete(options: LLMRequestOptions, apiKey: string): Promise<LLMResponse>
-  stream?(options: LLMRequestOptions, apiKey: string): AsyncIterable&lt;string&gt;
+  stream?(options: LLMRequestOptions, apiKey: string): AsyncIterable<string>
 }
 
 // ─── GitHub / PR Types ───────────────────────────────────────────────────────
@@ -68,6 +68,7 @@ export interface PRDetails {
   additions: number
   deletions: number
   changed_files: number
+  repo: string;
 }
 
 export interface ParsedPRUrl {
@@ -163,7 +164,7 @@ export type ReviewStatus = 'idle' | 'fetching' | 'reviewing' | 'complete' | 'err
 export interface ReviewState {
   status: ReviewStatus
   prUrl: string
-  config: Partial&lt;ReviewConfig&gt;
+  config: Partial<ReviewConfig>
   result: ReviewResult | null
   error: string | null
 }

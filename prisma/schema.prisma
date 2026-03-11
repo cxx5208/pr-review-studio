@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String   @id @default(cuid())
+  name          String?
+  email         String?  @unique
+  emailVerified DateTime?
+  image         String?
+  githubToken   String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  reviews       ReviewHistoryEntry[]
+}
+
+model ReviewHistoryEntry {
+  id          String   @id @default(uuid())
+  userId      String?
+  user        User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  prUrl       String
+  prTitle     String?
+  status      String   @default("pending")
+  result      String?
+  error       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

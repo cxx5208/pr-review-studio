@@ -1,1 +1,8 @@
-module.exports = {\n  plugins: [\n    require('tailwindcss'),\n    require('autoprefixer')\n  ]\n};
+import tailwindcss from 'tailwindcss';
+import autoprefixer from 'autoprefixer';
+
+const postcssConfig = {
+  plugins: [tailwindcss, autoprefixer],
+};
+
+export default postcssConfig;

@@ -1,1 +1,15 @@
-{\n  "extends": "next/core-web-vitals"\n}
+{
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-require-imports": "off",
+    "@next/next/no-img-element": "off"
+  },
+  "ignorePatterns": [".next/*", "out/*", "build/*", "next-env.d.ts"]
+}
